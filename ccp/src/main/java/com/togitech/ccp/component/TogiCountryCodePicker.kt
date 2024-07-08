@@ -299,7 +299,7 @@ private fun FocusRequester.safeFreeFocus() {
 private fun PlaceholderNumberHint(countryIso: Iso31661alpha2) {
     Text(
         text = stringResource(
-            id = numberHint.getOrDefault(countryIso, R.string.unknown),
+            id = numberHint.getOrElse(countryIso) { R.string.unknown },
         ),
     )
 }

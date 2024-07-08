@@ -190,10 +190,9 @@ private fun CountryRowItem(
         Text(
             text = countryItem.emojiFlag + "  " +
                 stringResource(
-                    id = countryNames.getOrDefault(
+                    id = countryNames.getOrElse(
                         countryItem.countryIso,
-                        R.string.unknown,
-                    ),
+                    ) { R.string.unknown },
                 ),
             style = textStyle,
             overflow = TextOverflow.Ellipsis,
